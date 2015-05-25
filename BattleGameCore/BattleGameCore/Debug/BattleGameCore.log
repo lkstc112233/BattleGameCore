@@ -1,0 +1,48 @@
+﻿生成启动时间为 2015/5/19 21:57:40。
+     1>项目“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\BattleGameCore\BattleGameCore.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Kevin\Documents\Program Libs\LuaLib\includes" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\BattleGameCore.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BattleGameCore.cpp
+         BattleGameCore.cpp
+     1>c:\users\kevin\documents\visual studio 2013\projects\battlegamecore\battlegamecore\battlegamecore.cpp(55): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>c:\users\kevin\documents\visual studio 2013\projects\battlegamecore\battlegamecore\battlegamecore.cpp(126): warning C4244: “初始化”: 从“lua_Integer”转换到“int”，可能丢失数据
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\BattleGameCore.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Kevin\Documents\Program Libs\LuaLib\Debug" Lualib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\BattleGameCore.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\BattleGameCore.lib" /MACHINE:X86 Debug\BattleGameCore.obj
+         Debug\stdafx.obj
+     1>Lualib.lib(lapi.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lapi.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lauxlib.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lauxlib.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lbaselib.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lbaselib.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lcode.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lcode.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lcorolib.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lcorolib.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lctype.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lctype.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(ldblib.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(ldblib.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(ldebug.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(ldebug.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(ldo.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(ldo.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(ldump.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(ldump.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lfunc.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lfunc.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lgc.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lgc.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(linit.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(linit.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(liolib.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(liolib.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(llex.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(llex.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lmathlib.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lmathlib.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lmem.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lmem.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(loadlib.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(loadlib.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lobject.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lobject.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lopcodes.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lopcodes.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(loslib.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(loslib.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lparser.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lparser.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lstate.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lstate.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lstring.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lstring.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lstrlib.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lstrlib.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(ltable.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(ltable.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(ltablib.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(ltablib.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(ltm.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(ltm.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lundump.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lundump.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lutf8lib.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lutf8lib.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lvm.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lvm.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>Lualib.lib(lzio.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“Lualib.lib(lzio.obj)”或在“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         BattleGameCore.vcxproj -> C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\Debug\BattleGameCore.exe
+     1>已完成生成项目“C:\Users\Kevin\documents\visual studio 2013\Projects\BattleGameCore\BattleGameCore\BattleGameCore.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.13
