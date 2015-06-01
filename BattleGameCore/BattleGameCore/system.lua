@@ -1,7 +1,6 @@
 system = {}
 
 dofile("list.lua")
-dofile("game.lua")
 
 system.isRunning = true
 system.messageList = list.new();
@@ -42,32 +41,23 @@ function system.getAnswer()
 end
 
 system.inited = false
-function system.init()
-	if not system.inited then
-		system.inited = true
-		system.messageList:inelm("s炸裂！超好玩的卡牌游戏！")
-		system.messageList:inelm("s游戏即将开始！")
-	end
-end
 
 system.counter = 0
 
 system.mainLoop = function()
-	system.init()
+	if not system.inited then
+		system.inited = true
+		system.messageList:inelm("s你好，世界！")
+		system.messageList:inelm("a你的年龄是：")
+		system.messageList:inelm("a你的性别是？（1：男，2：女）")
+		system.messageList:inelm("A")
+	end
 	if system.counter == 0 then
-		--local ans = system.getAnswer()
-		--if ans then
-		--	system.messageList:inelm(string.format('s你的年龄是：%d',ans))
-		--	system.counter = system.counter + 1
-		--end
-		system.messageList:inelm("s卡片共有" .. cards:size() .. "张")
-		local i = 1
-		while cards:size() ~= 0 do
-			local card = cards:outelm()
-			system.messageList:inelm("s第" .. i .. "张的名字是：" .. card)
-			system.messageList:inelm("s第" .. i .. "张是：" .. _G[card].getText())
+		local ans = system.getAnswer()
+		if ans then
+			system.messageList:inelm(string.format('s你的年龄是：%d',ans))
+			system.counter = system.counter + 1
 		end
-		system.counter = system.counter + 3
 	elseif system.counter == 1 then
 		local ans = system.getAnswer()
 		if ans then
