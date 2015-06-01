@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 lua_State *L = NULL;
@@ -80,40 +81,124 @@ Message pullAMessage()
 	}
 }
 
+wstring StringToWString(const std::string &str)
+{
+	std::wstring wstr;
+	int nLen = (int)str.length();
+	wstr.resize(nLen, L' ');
+
+	int nResult = MultiByteToWideChar(CP_ACP, 0, (LPCSTR)str.c_str(), nLen, (LPWSTR)wstr.c_str(), nLen);
+
+	if (nResult == 0)
+		return L"";
+
+	return wstr;
+}
+
+string WStringToString(const std::wstring &wstr)
+{
+	std::string str;
+	int nLen = (int)wstr.length();
+	str.resize(nLen, ' ');
+	int nResult = WideCharToMultiByte(CP_ACP, 0, (LPCWSTR)wstr.c_str(), nLen, (LPSTR)str.c_str(), nLen, NULL, NULL);
+	if (nResult == 0)
+		return "";
+	return str;
+}
+
+vector<string> DirectoryList(LPCWSTR Path)
+{
+	vector<string> files;
+	WIN32_FIND_DATA FindData;
+	HANDLE hError;
+	int FileCount = 0;
+	TCHAR FilePathName[MAX_PATH_LENGTH];
+	// 构造路径
+	TCHAR FullPathName[MAX_PATH_LENGTH];
+	_tcscpy_s(FilePathName, Path);
+	_tcscat_s(FilePathName, TEXT("\\*.*"));
+	hError = FindFirstFile(FilePathName, &FindData);
+	if (hError == INVALID_HANDLE_VALUE)
+		return vector<string>();
+	while (::FindNextFile(hError, &FindData))
+	{
+		// 过虑.和..
+		if (_tcscmp(FindData.cFileName, TEXT(".")) == 0 || _tcscmp(FindData.cFileName, TEXT("..")) == 0)
+			continue;
+
+		// 构造完整路径
+		wsprintf(FullPathName, TEXT("%s\\%s"), Path, FindData.cFileName);
+		FileCount++;
+		// 输出本级的文件
+#ifdef UNICODE
+		files.push_back(WStringToString(FullPathName));
+#else
+		files.push_back(FullPathName);
+#endif // UNICODE
+
+//		printf("\n%d  %s  ", FileCount, FullPathName);
+
+		if (FindData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
+		{
+			auto temp=DirectoryList(FullPathName);
+			files.insert(files.end(), temp.begin(),temp.end());
+		}
+			
+	}
+	return files;
+}
+
+void addCard(const char* name)
+{
+	lua_getglobal(L, "cards");
+	lua_getfield(L, -1, "inelm");
+	lua_getglobal(L, "cards");
+	lua_pushstring(L, name);
+	if (lua_pcall(L, 2, 0, NULL))
+		cerr << "ERROR:" << lua_tostring(L, -1) << "at line:" << __LINE__ << endl;;
+	lua_pop(L,1);
+}
+
+int loadFilesInFolder(lua_State *l)
+{
+	if (lua_gettop(l) < 1)
+		return 0;
+	string fileName=lua_tostring(l, 1);
+	auto files=DirectoryList(StringToWString(fileName).c_str());
+	for (auto f : files)
+	{
+		auto p = f.rfind(".");
+		if (p == std::string::npos)
+			continue;
+		auto tail = f.substr(p + 1);
+		transform(tail.begin(), tail.end(), tail.begin(), ::tolower);
+		if (tail != "lua")
+			continue;
+		luaL_dofile(L, f.c_str());
+		auto rp = f.rfind("\\");
+		auto name = f.substr(rp + 1, p - rp - 1);
+		addCard(name.c_str());
+	}
+}
+
 void initRunningStatus()
 {
 	L = luaL_newstate();
 	luaL_openlibs(L);
+
+	lua_register(L, "DEBUG_OUT", debug_out);
+	lua_register(L, "LOAD_FOLDER", loadFilesInFolder);
+	lua_pushinteger(L, RUNNING);
+	lua_setglobal(L, "RUNNING");
+	lua_pushinteger(L, STOPPED);
+	lua_setglobal(L, "STOPPED");
+
 	if(luaL_dofile(L, "system.lua"))
 	{
 		cerr << "File open ERROR." << endl;
 		cerr << lua_tostring(L, -1) << endl;
 		exit(-1);
 	}
-	//switch (luaL_loadfile(L, "system.lua"))
-	//{
-	//case LUA_OK:
-	//	cerr << "LUA_OK" << endl;
-	//	break;
-	//case LUA_ERRSYNTAX:
-	//	cerr << "LUA_ERRSYNTAX" << endl;
-	//	break;
-	//case LUA_ERRMEM:
-	//	cerr << "LUA_ERRMEM" << endl;
-	//	break;
-	//case LUA_ERRGCMM:
-	//	cerr << "LUA_ERRGCMM" << endl;
-	//	break;
-	//case LUA_ERRFILE:
-	//	cerr << "LUA_ERRFILE" << endl;
-	//	break;
-	//}
-	
-	lua_register(L, "DEBUG_OUT", debug_out);
-	lua_pushinteger(L, RUNNING);
-	lua_setglobal(L, "RUNNING");
-	lua_pushinteger(L, STOPPED);
-	lua_setglobal(L, "STOPPED");
 }
 
 bool checkRunningStatus()

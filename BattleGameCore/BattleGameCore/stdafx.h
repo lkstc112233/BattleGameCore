@@ -10,6 +10,8 @@
 #include <stdio.h>
 #include <tchar.h>
 
+#include <Windows.h>
 
+#define MAX_PATH_LENGTH 32768
 
 // TODO:  在此处引用程序需要的其他头文件
