@@ -1,11 +1,11 @@
-﻿生成启动时间为 2015/6/1 10:00:50。
+﻿生成启动时间为 2015/6/1 20:37:18。
      1>项目“C:\Users\Kevin\Documents\GitHub\BattleGameCore\BattleGameCore\BattleGameCore\BattleGameCore.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Kevin\Documents\Program Libs\LuaLib\includes" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\BattleGameCore.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BattleGameCore.cpp
          BattleGameCore.cpp
-     1>c:\users\kevin\documents\github\battlegamecore\battlegamecore\battlegamecore\battlegamecore.cpp(56): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
-     1>c:\users\kevin\documents\github\battlegamecore\battlegamecore\battlegamecore\battlegamecore.cpp(211): warning C4244: “初始化”: 从“lua_Integer”转换到“int”，可能丢失数据
-     1>c:\users\kevin\documents\github\battlegamecore\battlegamecore\battlegamecore\battlegamecore.cpp(182): warning C4715: “loadFilesInFolder”: 不是所有的控件路径都返回值
+     1>c:\users\kevin\documents\github\battlegamecore\battlegamecore\battlegamecore\battlegamecore.cpp(57): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>c:\users\kevin\documents\github\battlegamecore\battlegamecore\battlegamecore\battlegamecore.cpp(217): warning C4244: “初始化”: 从“lua_Integer”转换到“int”，可能丢失数据
+     1>c:\users\kevin\documents\github\battlegamecore\battlegamecore\battlegamecore\battlegamecore.cpp(183): warning C4715: “loadFilesInFolder”: 不是所有的控件路径都返回值
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Kevin\Documents\GitHub\BattleGameCore\BattleGameCore\Debug\BattleGameCore.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Kevin\Documents\Program Libs\LuaLib\Debug" Lualib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Kevin\Documents\GitHub\BattleGameCore\BattleGameCore\Debug\BattleGameCore.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Kevin\Documents\GitHub\BattleGameCore\BattleGameCore\Debug\BattleGameCore.lib" /MACHINE:X86 Debug\BattleGameCore.obj
          Debug\stdafx.obj
@@ -14,4 +14,4 @@
 
 生成成功。
 
-已用时间 00:00:01.17
+已用时间 00:00:01.31

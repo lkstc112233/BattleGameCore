@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "lua.hpp"
 
+#include <ctime>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -192,6 +193,11 @@ void initRunningStatus()
 	lua_setglobal(L, "RUNNING");
 	lua_pushinteger(L, STOPPED);
 	lua_setglobal(L, "STOPPED");
+	lua_getglobal(L, "math");
+	lua_getfield(L, -1, "randomseed");
+	lua_pushinteger(L, rand());
+	lua_pcall(L, 1, 0, NULL);
+	lua_pop(L, 1);
 
 	if(luaL_dofile(L, "system.lua"))
 	{
@@ -282,6 +288,7 @@ void askQuestions()
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	srand((unsigned)(time(NULL)));
 	initRunningStatus();
 	while (checkRunningStatus())
 	{

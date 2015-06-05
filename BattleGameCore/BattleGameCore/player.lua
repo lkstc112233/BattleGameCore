@@ -1,17 +1,21 @@
 player = {}
 
-player.resources = {}
---list.tail = 0
 --list.store = {}
 
---function list.new()
---	local ins = {}
---	for key,var in pairs(list) do
---		ins[key]=var
---	end
---	ins.new = nil
---	return ins
---end
+function player.new(belonging)
+	local ins = {}
+	for key,var in pairs(player) do
+		ins[key]=var
+	end
+	ins.new = nil
+	ins.belonging = belonging
+	ins.cards = vector.new()
+	return ins
+end
+
+function player.playcard(self,index)
+	
+end
 
 --function list.inelm(self,elm)
 --	self.store[self.head] = elm

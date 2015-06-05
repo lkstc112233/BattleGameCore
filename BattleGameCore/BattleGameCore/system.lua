@@ -1,5 +1,6 @@
 system = {}
 
+dofile("utilities.lua")
 dofile("list.lua")
 dofile("game.lua")
 
@@ -67,7 +68,7 @@ system.mainLoop = function()
 			system.messageList:inelm("s第" .. i .. "张的名字是：" .. card)
 			system.messageList:inelm("s第" .. i .. "张是：" .. _G[card].getText())
 		end
-		system.counter = system.counter + 3
+		system.counter = system.counter + 2
 	elseif system.counter == 1 then
 		local ans = system.getAnswer()
 		if ans then
@@ -80,8 +81,11 @@ system.mainLoop = function()
 			system.counter = system.counter + 1
 		end
 	elseif system.counter == 2 then
+		system.messageList:inelm(string.format('s咱们来个随机数吧：%d',math.random(1000)))
 		system.counter = system.counter + 1
 	elseif system.counter == 3 then
+		system.messageList:inelm('s游戏开始咯！')
+		game.begin()
 		system.counter = system.counter + 1
 	else
 		system.isRunning = false
